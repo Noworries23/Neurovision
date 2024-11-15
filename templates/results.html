@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+</head>
+<body>
+    <div style="text-align: center; padding: 50px;">
+        <h1>Prediction Results</h1>
+
+        {% for result in predictions %}
+            <div style="margin-bottom: 20px;">
+                <h3>File: {{ result.filename }}</h3>
+                {% if result.error %}
+                    <p><strong>Error:</strong> {{ result.error }}</p>
+                {% else %}
+                    <p><strong>Prediction:</strong> {{ result.prediction }}</p>
+                    <p><strong>Confidence:</strong> {{ result.confidence }}%</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+        
+        <div style="margin-top: 20px;">
+            <a href="/"><button>Go Back to Home</button></a>
+        </div>
+    </div>
+</body>
+</html>

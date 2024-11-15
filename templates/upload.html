@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <div>
+            <!-- Display the uploaded image from base64 -->
+            <img src="data:image/jpeg;base64,{{ image_base64 }}" alt="Uploaded Image" class="image-preview">
+        </div>
+        <div class="results">
+            <p><strong>Predicted Class:</strong> {{ prediction }}</p>
+            <p><strong>Confidence:</strong> {{ confidence }}%</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Card and Prediction for neurovision</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .card {
+            background-color: #ffffff;
+            width: 350px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        .card h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .metrics {
+            background-color: #f9f9f9;
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .metrics h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+        .metrics p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #444;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #888;
+        }
+        .confusion-matrix {
+            margin: 20px 0;
+        }
+        .confusion-matrix img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .results {
+            margin-top: 20px;
+        }
+        .results h2 {
+            font-size: 20px;
+        }
+        .results p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Model: neurovision</h1>
+    <p><strong>Architecture:</strong> CNN with 3 convolutional layers</p>
+    <p><strong>Number of Classes:</strong> 4</p>
+    <p><strong>Batch Size:</strong> 32</p>
+    <p><strong>Epochs:</strong> 10</p>
+
+    <div class="metrics">
+        <h2>Performance Metrics:</h2>
+        <p><strong>Accuracy:</strong> 100.00%</p>
+        <p><strong>Precision (weighted):</strong> 1.00</p>
+        <p><strong>Recall (weighted):</strong> 1.00</p>
+        <p><strong>F1 Score (weighted):</strong> 1.00</p>
+    </div>
+
+    <div class="confusion-matrix">
+        <h2>Confusion Matrix:</h2>
+        <img src="confusion_matrix.png" alt="Confusion Matrix">
+    </div>
+
+    <div class="footer">
+        <p>Model trained on 7590 training images and validated on 1898 images.</p>
+        <p>Visit our website for more details.</p>
+    </div>
+</div>
+
+<div class="begin">
+    <a href="{{ url_for('predict') }}">
+        <button>Start Prediction</button>
+    </a>
+</div>
+
+</body>
+</html>
